@@ -2,7 +2,10 @@
 
 A simple example of HTML+CSS3+Javascript+jQuery+Bootstrap
 
-![](demo.gif)
+<p align="center">
+  <img src="demo.gif" width="350"/>
+</p>
+
 
 JS Dependencies
 
