@@ -1,4 +1,4 @@
-# Business Evaluation
+# Simple questionnaire
 
 A simple example of HTML+CSS3+Javascript+jQuery+Bootstrap
 
