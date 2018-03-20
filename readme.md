@@ -2,6 +2,8 @@
 
 A simple example of HTML+CSS3+Javascript+jQuery+Bootstrap
 
+![](demo.gif)
+
 JS Dependencies
 
 | JS | Explanation | URL |         
