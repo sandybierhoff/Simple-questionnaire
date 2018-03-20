@@ -1,0 +1,86 @@
+.questionnaire {
+    padding: 10px 5px;
+}
+
+.questionnaire textarea {
+    resize: vertical !important;
+    margin-top: 5px;
+}
+
+.questionnarie > section  { 
+    width: 100% 
+}
+
+.questions > p { 
+    margin: 0px;
+}
+
+.questions > ol {
+    margin: 0px;
+    padding-left: 20px;
+}
+
+.questions > ol > li {
+    padding-left: 15px;
+}
+
+.step {
+    display: none;    
+}
+
+.step > .url > * { 
+    display: inline-block;
+}
+
+.step > .url > a { 
+    margin-left: 5px;
+}
+
+.step > div, nav {
+    margin-top: 15px;
+}
+
+nav > input { 
+    padding: 5px 50px !important;
+}
+
+nav > input[type=submit] {
+    display: none;
+}
+
+.evaluation_table { 
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.evaluation_table td {
+    padding: 5px;
+}
+
+.evaluation_table thead { 
+    font-weight: bold;
+    background: #4472c4;
+    color: white;
+}
+
+.evaluation_table tbody {
+    color: black;
+}
+
+.evaluation_table tbody tr:nth-child(odd) { 
+    background-color:#cfd5ea;
+}
+
+.evaluation_table tbody tr:nth-child(even) { 
+    background-color:#e9ebf5;
+}
+
+.btn-primary {
+    background-color: #4472c4;
+}
+
+.map { 
+    width:100%;
+    height: 200px;
+}

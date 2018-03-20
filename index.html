@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sandy Averhoff - Evaluation</title>
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/sweetalert.css">
+    <link rel="stylesheet" href="css/css-stars.css">
+    <link rel="stylesheet" href="css/questionnaire.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 col-xs-12">
+                <div class="questionnaire" data-url="server-mock.php" data-lt="-12.043333" data-ln="-77.028333">
+                    <section class="map">
+                        
+                    </section>
+                        
+                    <address>
+                        HAVC <br><br>
+                        Heating and Air Conditioning Studio City <br><br>
+                        12115 Ventura Blvd <p class="pull-right">(818) 210-4039</p> <br>
+                        Studio City, CA 91604
+                    </address>
+                    
+                    <section class="steps">
+                        <form class="step">
+                            <div class="questions">
+                                <p>Questions on evaluate:</p>
+                                <ol>
+                                    <li>Is this good neighborhood ?</li>
+                                    <li>Is the name of business appropiate ?</li>
+                                    <li>Is the phone's area code correct ?</li>                                    
+                                </ol>                        
+                            </div>
+
+                            <div class="feedback">
+                                <select class="rating" name="rating">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>   
+                                </select>
+                                <textarea id="a" placeholder="Please enter your feedback here.." name="feedback" class="form-control"></textarea>
+                            </div>
+                        </form>
+
+                        <form class="step">
+                            <div class="url">
+                                <img src="img/icon1.png" />                                
+                                <a href="https://www.yelp.com/biz/heating-and-a-sword">https://www.yelp.com/biz/heating-and-a...</a>
+                            </div>
+
+                            <div class="questions">
+                                <p>Questions on evaluate:</p>
+                                <ol>
+                                    <li>Does business informatiomn match ?</li>
+                                    <li>Are Uploaded photos appealing for customers ?</li>
+                                    <li>Is the yelp deal appropiate ?</li>                                    
+                                    <li>Are services offered correct ?</li>                                    
+                                </ol>                        
+                            </div>
+
+                            <div class="feedback">
+                                <select class="rating" name="rating">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>   
+                                </select>
+                                <textarea id="a" placeholder="Please enter your feedback here.." name="feedback" class="form-control"></textarea>
+                            </div>
+                        </form>
+
+                        <form class="step">
+                            <div class="url">
+                                <img src="img/icon2.png">                                
+                                <a href="http://www.mechtechhvac.com">http://www.mechtechhvac.com</a>
+                            </div>
+
+                            <div class="questions">
+                                <p>Questions on evaluate:</p>
+                                <ol>
+                                    <li>Does website work ?</li>
+                                    <li>Does business information match ?</li>
+                                    <li>Is it visually appealing ?</li>                                    
+                                </ol>                        
+                            </div>
+
+                            <div class="feedback">
+                                <select class="rating" name="rating">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>   
+                                </select>
+                                <textarea id="a" placeholder="Please enter your feedback here.." name="feedback" class="form-control"></textarea>
+                            </div>
+                        </form>
+                    </section>
+                        
+                    <nav>                        
+                        <input type="button" class="btn btn-primary" value="Next">                        
+                        <input type="submit" class="btn btn-primary" value="Submit">                        
+                    </nav>
+                    
+                </div>
+            </div>
+        </div>
+    </div>    
+</body>
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/jquery.barrating.min.js"></script>
+<script src="js/sweetalert.min.js"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script src="js/gmaps.min.js"></script>
+<script src="js/questionnaire.js"></script>
+</html>
