@@ -36,8 +36,9 @@ $.fn.questionnaire = function($) {
 
     function save() {    
         if(!validate()) return;                      
+        let data = getFormData();
         busy(true);
-        $.ajax({ url: _url, method:'post', data: JSON.stringify(getFormData()), dataType: 'json' }).then(onSave, onError); 
+        $.ajax({ url: _url, method:'post', data: JSON.stringify(data), dataType: 'json' }).then(onSave, onError); 
     }
 
     function busy(busy) {   
@@ -50,7 +51,8 @@ $.fn.questionnaire = function($) {
         let i = 0;
 
         for( let form of $('.step').toArray() ) {       
-            data['step'+(++i)] = {};                 
+            data['step'+(++i)] = {};         
+            
             $(form).serializeArray().map(function(obj){                 
                 data['step'+(i)][obj.name] = obj.value;
             });            
