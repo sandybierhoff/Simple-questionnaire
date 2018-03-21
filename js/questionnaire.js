@@ -34,7 +34,8 @@ $.fn.questionnaire = function($) {
         new GMaps({div: _map[0], lat: _scope.attr('data-lt'), lng: _scope.attr('data-ln') });  
     }
 
-    function save() {                          
+    function save() {    
+        if(!validate()) return;                      
         busy(true);
         $.ajax({ url: _url, method:'post', data: JSON.stringify(getFormData()), dataType: 'json' }).then(onSave, onError); 
     }
