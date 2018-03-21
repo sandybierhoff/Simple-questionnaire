@@ -39,9 +39,9 @@ $.fn.questionnaire = function($) {
         $.ajax({ url: _url, method:'post', data: JSON.stringify(getFormData()), dataType: 'json' }).then(onSave, onError); 
     }
 
-    function busy(busy) { 
-        _submit.prop('disabled', busy);        
-        _forms[_step].prop('disabled', busy);                              
+    function busy(busy) {   
+        $('nav input', _scope).prop('disabled', busy);
+        $('*', _forms[_step]).prop('disabled', busy);                              
     }
 
     function getFormData () {
