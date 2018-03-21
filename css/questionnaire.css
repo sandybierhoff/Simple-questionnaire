@@ -36,15 +36,15 @@
     margin-left: 5px;
 }
 
-.step > div, nav {
+.step > div, nav, .errors {
     margin-top: 15px;
 }
 
 nav > input { 
-    padding: 5px 50px !important;
+    padding: 5px 20px !important;
 }
 
-nav > input[type=submit] {
+nav > input[type=submit], nav > input[data-back]  {
     display: none;
 }
 
@@ -83,4 +83,15 @@ nav > input[type=submit] {
 .map { 
     width:100%;
     height: 200px;
+}
+
+.error {
+    border: 1px solid red;
+}
+
+.errors {
+    /* white-space: nowrap; */    
+    padding: 0px;
+    list-style: outside none none;
+    font-size: 12px;
 }

@@ -21,9 +21,10 @@
                     </section>
                         
                     <address>
-                        HAVC <br><br>
-                        Heating and Air Conditioning Studio City <br><br>
-                        12115 Ventura Blvd <p class="pull-right">(818) 210-4039</p> <br>
+                        <p class="pull-right">HAVC</p> <br><br>
+                        Heating and Air Conditioning Studio City <br>
+                        (818) 210-4039 <br>
+                        12115 Ventura Blvd <br>
                         Studio City, CA 91604
                     </address>
                     
@@ -39,14 +40,14 @@
                             </div>
 
                             <div class="feedback">
-                                <select class="rating" name="rating">
+                                <select data-required="Please select a rating" class="rating" name="rating">                                    
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
                                     <option value="5">5</option>   
                                 </select>
-                                <textarea id="a" placeholder="Please enter your feedback here.." name="feedback" class="form-control"></textarea>
+                                <textarea data-required="Please enter your feedback about this location." placeholder="Please enter your feedback here.." name="feedback" class="form-control"></textarea>
                             </div>
                         </form>
 
@@ -67,14 +68,14 @@
                             </div>
 
                             <div class="feedback">
-                                <select class="rating" name="rating">
+                                <select class="rating" data-required="Please select a rating" name="rating">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
                                     <option value="5">5</option>   
                                 </select>
-                                <textarea id="a" placeholder="Please enter your feedback here.." name="feedback" class="form-control"></textarea>
+                                <textarea data-required="Please enter your feedback about this location." placeholder="Please enter your feedback here.." name="feedback" class="form-control"></textarea>
                             </div>
                         </form>
 
@@ -94,23 +95,30 @@
                             </div>
 
                             <div class="feedback">
-                                <select class="rating" name="rating">
+                                <select class="rating" data-required="Please select a rating" name="rating">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
                                     <option value="5">5</option>   
                                 </select>
-                                <textarea id="a" placeholder="Please enter your feedback here.." name="feedback" class="form-control"></textarea>
+                                <textarea data-required="Please enter your feedback about this location." placeholder="Please enter your feedback here.." name="feedback" class="form-control"></textarea>
                             </div>
                         </form>
                     </section>
                         
-                    <nav>                        
-                        <input type="button" class="btn btn-primary" value="Next">                        
-                        <input type="submit" class="btn btn-primary" value="Submit">                        
-                    </nav>
-                    
+                    <div class="row">
+                        <div class="col-md-5 col-xs-6">
+                            <nav>
+                                <input type="button" data-back class="btn btn-primary" value="Back">                        
+                                <input type="button" data-next class="btn btn-primary" value="Next">                        
+                                <input type="submit" class="btn btn-primary" value="Submit">                          
+                            </nav>
+                        </div>
+                        <div class="col-md-7 col-xs-6">
+                            <ul class="text-danger errors text-right"></ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -9,25 +9,29 @@
 
 // Component definition
 $.fn.questionnaire = function($) { 
-    let _scope = $(this);
-    let _step = 1;
+    let _scope = $(this); 
+    let _step = -1;
     let _url = _scope.attr('data-url');
-    let _next = $('nav > input[type=button]', _scope);
-    let _submit = $('nav > input[type=submit]', _scope);
-    let _steps = $('.step', _scope);
-    let _map = $('.map', _scope);
-
+    let _next = $('nav input[data-next]', _scope);
+    let _back = $('nav input[data-back]', _scope);
+    let _submit = $('nav input[type=submit]', _scope);
+    let _forms = $('.step', _scope);
+    let _map = $('.map', _scope);    
+    let _error = $('.errors', _scope);    
+    //let _current = $(_forms[_step]);
+    
     init();
     
     function init() { 
-        $('.rating', _scope).barrating({theme:'css-stars'});      
-
+        $('.rating').val(-1).barrating({ theme: 'css-stars', allowEmpty: true, emptyValue:-1, initialRating: '' });
         _submit.on('click', save);
         _next.on('click', onNext);
-        _submit.hide();
-
-        navigate(1);        
+        _back.on('click', onBack);
+        
+        navigateTo(_step+1);    
+            
         if(_scope.attr('data-lt')==null || _scope.attr('data-ln')==null) console.warn('Invalid Geo coordinates');
+        if(_map.length==0) console.warn('Map container not exists');
         new GMaps({div: _map[0], lat: _scope.attr('data-lt'), lng: _scope.attr('data-ln') });  
     }
 
@@ -37,8 +41,8 @@ $.fn.questionnaire = function($) {
     }
 
     function busy(busy) { 
-        _submit.prop('disabled', busy);
-        $('textarea', _steps[_step-1]).prop('disabled', busy);
+        _submit.prop('disabled', busy);        
+        _forms[_step].prop('disabled', busy);                              
     }
 
     function getFormData () {
@@ -71,14 +75,39 @@ $.fn.questionnaire = function($) {
     }
 
     function onNext() { 
-        if(_step==_steps.length) return;        
-        navigate(++_step);
-       
-        if(_step==_steps.length) { _next.hide(); _submit.show(); }
+        if (_step == _forms.length-1 || !validate()) return;        
+        navigateTo(_step+1);       
+        updateNavBar();
     }
 
-    function navigate(step) {            
-        if(_step>=2) $(_steps[step-2]).fadeOut(function(){ $(_steps[step-1]).fadeIn(); });  
-        else $(_steps[step-1]).fadeIn();
+    function onBack() {
+        if (_step == 0) return;        
+        navigateTo(_step-1);
+        updateNavBar();             
+    }
+
+    function navigateTo(to) {            
+        if(_step<0) $(_forms[to]).fadeIn();
+        else $(_forms[_step]).fadeOut(x=>$(_forms[to]).fadeIn());
+
+        _step = to;
+    }
+
+    function updateNavBar() { 
+        _back.css({ display: _step>0?'inline-block':'none'});
+        _next.css({ display: _step<_forms.length-1 ? 'inline-block':'none'});
+        _submit.css({ display: _step==_forms.length-1 ? 'inline-block' : 'none' });
+    }
+
+    function validate() {          
+        _error.empty();
+        $(_forms[_step]).serializeArray().map(obj=>{                        
+            if( obj.value.trim()=='' || parseInt(obj.value)<0 ) {
+                let formInput = $('[name='+obj.name+']', _forms[_step]);
+                _error.append('<li>'+formInput.attr('data-required')+'</li>');                
+            }
+        });
+
+        return _error.children().length==0;            
     }
 };
