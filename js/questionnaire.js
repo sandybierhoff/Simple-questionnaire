@@ -17,8 +17,7 @@ $.fn.questionnaire = function($) {
     let _submit = $('nav input[type=submit]', _scope);
     let _forms = $('.step', _scope);
     let _map = $('.map', _scope);    
-    let _error = $('.errors', _scope);    
-    //let _current = $(_forms[_step]);
+    let _error = $('.errors', _scope);      
     
     init();
     
